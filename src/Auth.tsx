@@ -85,9 +85,7 @@ export default function Auth() {
 
       <div className="auth-logout">
         <button
-          onClick={() =>
-            logout({ logoutParams: { returnTo: window.location.origin } })
-          }
+          onClick={() => logout({ logoutParams: { returnTo: "*/" } })}
           className="bg-red-600 text-white p-2 rounded-md"
         >
           Logout
