@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       domain="dev-n5flfjks3q56tqob.us.auth0.com"
       clientId="XETWa09XSO8j4XWWupiUdaFHlqJqhB2j"
       authorizationParams={{
-        redirect_uri: "http://localhost:5173/auth",
+        redirect_uri: window.location.origin,
       }}
     >
       <App />
