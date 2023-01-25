@@ -85,7 +85,13 @@ export default function Auth() {
 
       <div className="auth-logout">
         <button
-          onClick={() => logout({ logoutParams: { returnTo: "*/" } })}
+          onClick={() =>
+            logout({
+              logoutParams: {
+                returnTo: `${import.meta.env.VITE_LOGOUT_REDIRECT}`,
+              },
+            })
+          }
           className="bg-red-600 text-white p-2 rounded-md"
         >
           Logout
