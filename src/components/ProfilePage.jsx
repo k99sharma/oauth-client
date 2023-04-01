@@ -70,6 +70,7 @@ function APISecuredData() {
           },
         });
 
+        // we are sending request with access token to access secured data
         const res = await fetch(`${CONFIG.API}/test/securedResource`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -77,7 +78,6 @@ function APISecuredData() {
         });
 
         const data = await res.json();
-        console.log(data);
 
         // if there is an error
         if (data.error) {
