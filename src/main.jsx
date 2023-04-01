@@ -18,7 +18,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain={CONFIG.AUTH0_DOMAIN}
       clientId={CONFIG.AUTH0_CLIENT}
       authorizationParams={{
-        redirect_uri: "http://localhost:5173/profile",
+        redirect_uri: window.location.origin,
+        audience: CONFIG.AUTH0_AUDIENCE,
+        scope: "openid profile email",
       }}
     >
       <App />

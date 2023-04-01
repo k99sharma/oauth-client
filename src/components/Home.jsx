@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 // login button component
 function LoginButton() {
@@ -19,6 +20,8 @@ function LoginButton() {
 }
 
 function Home() {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <div className="home">
       <div className="home-header text-2xl text-bold mb-2">
@@ -29,9 +32,17 @@ function Home() {
           Login to access the secure resource
         </div>
 
-        <div className="home-login-button">
-          <LoginButton />
-        </div>
+        {isAuthenticated ? (
+          <div className="home-profile">
+            <Link to="/profile">
+              <Button>Go to Profile</Button>
+            </Link>
+          </div>
+        ) : (
+          <div className="home-login-button">
+            <LoginButton />
+          </div>
+        )}
       </div>
     </div>
   );
